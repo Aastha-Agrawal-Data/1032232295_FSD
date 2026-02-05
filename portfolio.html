@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aastha Agrawal | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: #f2f5f9;
+            color: #2c3e50;
+        }
+
+        #navbar {
+            background-color: #1f3a5f;
+            padding: 15px;
+            text-align: center;
+        }
+
+        #navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 18px;
+            font-weight: 500;
+        }
+
+        #navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .section {
+            background-color: white;
+            margin: 25px auto;
+            padding: 25px;
+            max-width: 900px;
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #1f3a5f;
+        }
+
+        .profile-img {
+            display: block;
+            margin: 20px auto;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 3px solid #1f3a5f;
+        }
+
+        ul {
+            line-height: 1.8;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        table, th, td {
+            border: 1px solid #999;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #e8edf3;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            border: 1px solid #aaa;
+            border-radius: 4px;
+        }
+
+        form button {
+            background-color: #1f3a5f;
+            color: white;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            #navbar a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="navbar">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Project</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div class="section" id="about">
+        <h2>About Me</h2>
+
+        <img src="profile.jpg" alt="Aastha Agrawal" class="profile-img">
+
+        <p style="color: #555;">
+            I am <strong>Aastha Agrawal</strong>, a Third Year Computer Science Engineering student with a strong
+            interest in data analysis and machine learning. I am focused on building a solid foundation
+            in analytical thinking, data-driven decision making, and practical problem solving.
+        </p>
+    </div>
+
+    <div class="section" id="skills">
+        <h2>Technical Skills</h2>
+
+        <ul>
+            <li>SQL for structured data querying and analysis</li>
+            <li>Data Analysis using statistical and exploratory techniques</li>
+            <li>Machine Learning fundamentals for predictive modeling</li>
+        </ul>
+
+        <table>
+            <tr>
+                <th>Skill</th>
+                <th>Proficiency Level</th>
+            </tr>
+            <tr>
+                <td>SQL</td>
+                <td>Intermediate</td>
+            </tr>
+            <tr>
+                <td>Data Analysis</td>
+                <td>Intermediate</td>
+            </tr>
+            <tr>
+                <td>Machine Learning</td>
+                <td>Beginner to Intermediate</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section" id="projects">
+        <h2>Academic Project</h2>
+        <p>
+            <strong>Sales Prediction using Advertising Data</strong><br><br>
+            Developed a predictive model to analyze the relationship between advertising expenditure
+            and sales performance. The project involved data preprocessing, exploratory data analysis,
+            and applying machine learning algorithms to estimate sales outcomes based on advertising inputs.
+        </p>
+    </div>
+
+    <div class="section" id="contact">
+        <h2>Contact</h2>
+
+        <form>
+            <label>Name</label>
+            <input type="text" required>
+
+            <label>Email</label>
+            <input type="email" required>
+
+            <label>Message</label>
+            <textarea rows="4"></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+</body>
+</html>
