@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Student Registration Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-100 min-h-screen transition-colors duration-300">
+<header class="w-full max-w-7xl mx-auto px-6 py-8 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white shadow-lg shadow-primary/30">
+<span class="material-icons">school</span>
+</div>
+<h1 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
+                Student <span class="text-primary">Registration</span> Portal
+            </h1>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-sm hover:shadow-md transition-all text-sm font-medium" id="themeToggle">
+<span class="material-icons text-primary text-lg">palette</span>
+            Change Theme
+        </button>
+</header>
+<main class="max-w-7xl mx-auto px-6 pb-12">
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-xl overflow-hidden flex flex-col lg:flex-row min-h-[700px]">
+<section class="lg:w-2/5 p-8 bg-slate-50 dark:bg-slate-800/50 flex flex-col border-r border-slate-100 dark:border-slate-800">
+<div class="mb-8">
+<h2 class="text-3xl font-bold mb-2">Welcome</h2>
+<p class="text-lg text-primary font-medium" id="personalizedGreeting">Hello, Guest</p>
+<p class="text-slate-500 dark:text-slate-400 mt-2 text-sm leading-relaxed">
+                        Join our academic community today. Please fill out the form to create your student account.
+                    </p>
+</div>
+<div class="flex-grow flex flex-col justify-center">
+<div class="relative group aspect-[4/5] rounded-xl overflow-hidden shadow-lg mb-6">
+<img alt="Student Portal Visual" class="w-full h-full object-cover transition-opacity duration-500" data-alt="Vibrant blooming flowers in a botanical garden" id="galleryImage" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnFD_iffHVFqMrCf1xqtPuUfSqd-bvzVEHKMD0Th8eqa4a61CZjiufbzjhfaCcnyu2FPLSuSio3pLeCE7DKUKNp0jeuN73slEC1dD_N446mbFiD8xxTKTpoDYDcFlOWkE9XP1iU6hjldPXa7FeGZZgd1Ff_3qulHlTMHXpxd72qBJfR_YioqY507xArQL11s5ugqjhpjbzzgUUlBlqMft5--BLJVP5SjmNpRoUXY5a-BscauemRgNFV4dhS5yq26enmSxqfwQzjVeV"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+</div>
+<div class="mt-4 p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+<div class="mb-4">
+<h4 class="text-sm font-bold uppercase tracking-wider text-slate-500 flex items-center gap-2 mb-3">
+<span class="material-icons text-sm">lightbulb</span>
+                            Registration Tips
+                        </h4>
+<div class="flex gap-2">
+<input class="flex-1 text-xs px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" id="newTipInput" placeholder="Enter a custom tip..." type="text"/>
+<button class="shrink-0 text-[10px] bg-primary text-white hover:bg-primary/90 px-3 py-2 rounded font-bold transition-colors shadow-sm" id="addTipBtn">
+                                ADD NOTE
+                            </button>
+</div>
+</div>
+<ul class="space-y-2 max-h-[180px] overflow-y-auto pr-1" id="tipsList">
+<li class="group flex items-start justify-between bg-slate-50 dark:bg-slate-900/50 p-2 rounded text-xs text-slate-600 dark:text-slate-400 border border-transparent hover:border-slate-200 dark:hover:border-slate-700">
+<span>Use a university-issued email if available.</span>
+<button class="delete-tip opacity-0 group-hover:opacity-100 text-slate-400 hover:text-red-500 transition-opacity">
+<span class="material-icons text-sm">close</span>
+</button>
+</li>
+</ul>
+</div>
+<div class="mt-6 p-4 bg-primary/5 dark:bg-primary/10 rounded-lg border border-primary/10">
+<div class="flex gap-3">
+<span class="material-icons text-primary">info</span>
+<p class="text-xs text-slate-600 dark:text-slate-400">
+                            Your information is encrypted and stored securely according to our institutional privacy policy.
+                        </p>
+</div>
+</div>
+</section>
+<section class="lg:w-3/5 p-8 lg:p-12">
+<div class="max-w-md mx-auto">
+<h3 class="text-xl font-bold mb-8 flex items-center gap-2">
+<span class="w-1.5 h-6 bg-primary rounded-full"></span>
+                        Account Information
+                    </h3>
+<form class="space-y-5" id="registrationForm">
+<div class="space-y-1">
+<label class="block text-sm font-semibold text-slate-700 dark:text-slate-300" for="username">Username</label>
+<div class="relative">
+<span class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">person</span>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all" id="username" name="username" placeholder="johndoe123" type="text"/>
+</div>
+<p class="hidden text-xs text-red-500 mt-1 font-medium" id="usernameError">Username must be at least 3 characters.</p>
+</div>
+<div class="space-y-1">
+<label class="block text-sm font-semibold text-slate-700 dark:text-slate-300" for="email">Email Address</label>
+<div class="relative">
+<span class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">mail</span>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all" id="email" name="email" placeholder="student@university.edu" type="email"/>
+</div>
+<p class="hidden text-xs text-red-500 mt-1 font-medium" id="emailError">Please enter a valid email address.</p>
+</div>
+<div class="space-y-1">
+<label class="block text-sm font-semibold text-slate-700 dark:text-slate-300" for="phone">Phone Number</label>
+<div class="relative">
+<span class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">phone</span>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all" id="phone" name="phone" placeholder="+1 (555) 000-0000" type="tel"/>
+</div>
+<p class="hidden text-xs text-red-500 mt-1 font-medium" id="phoneError">Enter a valid 10-digit phone number.</p>
+</div>
+<div class="grid grid-cols-1 gap-5">
+<div class="space-y-1">
+<label class="block text-sm font-semibold text-slate-700 dark:text-slate-300" for="password">Password</label>
+<div class="relative">
+<span class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">lock</span>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all" id="password" name="password" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<div class="bg-slate-50 dark:bg-slate-800/80 p-4 rounded-lg border border-slate-100 dark:border-slate-700" id="passwordRequirements">
+<h4 class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-3">Password Requirements</h4>
+<ul class="space-y-2" id="requirementsList">
+<li class="flex items-center gap-2 text-xs text-red-500 font-medium" data-req="length">
+<span class="material-icons text-[14px]">cancel</span>
+<span>At least 7 characters</span>
+</li>
+<li class="flex items-center gap-2 text-xs text-red-500 font-medium" data-req="capital">
+<span class="material-icons text-[14px]">cancel</span>
+<span>One capital letter</span>
+</li>
+<li class="flex items-center gap-2 text-xs text-red-500 font-medium" data-req="digit">
+<span class="material-icons text-[14px]">cancel</span>
+<span>One digit (0-9)</span>
+</li>
+<li class="flex items-center gap-2 text-xs text-red-500 font-medium" data-req="special">
+<span class="material-icons text-[14px]">cancel</span>
+<span>Special character (&amp;, $, #, @)</span>
+</li>
+</ul>
+</div>
+<div class="space-y-1">
+<label class="block text-sm font-semibold text-slate-700 dark:text-slate-300" for="confirmPassword">Confirm Password</label>
+<div class="relative">
+<span class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">verified_user</span>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all" id="confirmPassword" name="confirmPassword" placeholder="••••••••" type="password"/>
+</div>
+<p class="hidden text-xs text-red-500 mt-1 font-medium" id="confirmError">Passwords do not match.</p>
+</div>
+</div>
+<div class="pt-6 flex flex-col sm:flex-row gap-4">
+<button class="flex-1 bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 flex justify-center items-center gap-2" id="submitBtn" type="submit">
+<span class="material-icons">arrow_forward</span>
+</button>
+<button class="px-6 py-3 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-bold rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-all" id="resetBtn" type="button">
+                                Reset Form
+                            </button>
+</div>
+</form>
+</div>
+</section>
+</div>
+</main>
+<footer class="max-w-7xl mx-auto px-6 py-8 border-t border-slate-200 dark:border-slate-800 text-center">
+<p class="text-sm text-slate-500 dark:text-slate-400">
+            © 2024 University Registration System. All Rights Reserved.
+        </p>
+</footer>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+        $(document).ready(function() {
+            // Set Submit Button Text via jQuery
+            $('#submitBtn').prepend('Register Now ');
+            // Image Gallery Rotation
+            const images = [
+                'https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&q=80&w=800',
+                'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=800',
+                'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=800'
+            ];
+            let currentImg = 0;
+            setInterval(function() {
+                currentImg = (currentImg + 1) % images.length;
+                $('#galleryImage').fadeOut(400, function() {
+                    $(this).attr('src', images[currentImg]).fadeIn(400);
+                });
+            }, 5000);
+            // Dynamic Greeting
+            $('#username').on('input', function() {
+                const val = $(this).val();
+                if(val.length > 0) {
+                    $('#personalizedGreeting').text('Hello, ' + val);
+                } else {
+                    $('#personalizedGreeting').text('Hello, Guest');
+                }
+            });
+            // Theme Switcher
+            $('#themeToggle').on('click', function() {
+                $('html').toggleClass('dark');
+                if($('html').hasClass('dark')) {
+                    $('body').removeClass('bg-background-light').addClass('bg-background-dark');
+                } else {
+                    $('body').removeClass('bg-background-dark').addClass('bg-background-light');
+                }
+            });
+            // Registration Tips: Add/Delete Nodes (Custom Note Input)
+            $('#addTipBtn').on('click', function() {
+                const tipText = $('#newTipInput').val().trim();
+                if (tipText === "") {
+                    $('#newTipInput').addClass('border-red-500 focus:ring-red-500/20').focus();
+                    setTimeout(() => {
+                        $('#newTipInput').removeClass('border-red-500 focus:ring-red-500/20');
+                    }, 2000);
+                    return;
+                }
+                const newTip = $('<li>').addClass('group flex items-start justify-between bg-slate-50 dark:bg-slate-900/50 p-2 rounded text-xs text-slate-600 dark:text-slate-400 border border-transparent hover:border-slate-200 dark:hover:border-slate-700');
+                const textNode = document.createTextNode(tipText);
+                const span = $('<span>').append(textNode);
+                const delBtn = $('<button>').addClass('delete-tip opacity-0 group-hover:opacity-100 text-slate-400 hover:text-red-500 transition-opacity')
+                                           .append($('<span>').addClass('material-icons text-sm').text('close'));
+                newTip.append(span).append(delBtn);
+                $('#tipsList').prepend(newTip);
+                $('#newTipInput').val('');
+            });
+            // Allow enter key to add tip
+            $('#newTipInput').on('keypress', function(e) {
+                if(e.which === 13) {
+                    $('#addTipBtn').click();
+                    return false;
+                }
+            });
+            $('#tipsList').on('click', '.delete-tip', function() {
+                $(this).closest('li').fadeOut(200, function() {
+                    $(this).remove();
+                });
+            });
+            // Password Validation Logic
+            function updateRequirement(selector, isMet, labelText) {
+                const $el = $(`li[data-req="${selector}"]`);
+                $el.empty();
+                const icon = isMet ? 'check_circle' : 'cancel';
+                const colorClass = isMet ? 'text-green-500' : 'text-red-500';
+                $el.removeClass('text-red-500 text-green-500').addClass(colorClass);
+                $el.append($('<span>').addClass('material-icons text-[14px]').text(icon));
+                $el.append($('<span>').text(labelText));
+            }
+            $('#password').on('input', function() {
+                const val = $(this).val();
+                updateRequirement('length', val.length >= 7, 'At least 7 characters');
+                updateRequirement('capital', /[A-Z]/.test(val), 'One capital letter');
+                updateRequirement('digit', /\d/.test(val), 'One digit (0-9)');
+                updateRequirement('special', /[&@#$]/.test(val), 'Special character (&, $, #, @)');
+                const allMet = val.length >= 7 && /[A-Z]/.test(val) && /\d/.test(val) && /[&@#$]/.test(val);
+                if (val.length > 0) {
+                    if (allMet) {
+                        $(this).addClass('border-green-500').removeClass('border-red-500 border-slate-200 dark:border-slate-700');
+                    } else {
+                        $(this).addClass('border-red-500').removeClass('border-green-500 border-slate-200 dark:border-slate-700');
+                    }
+                } else {
+                    $(this).removeClass('border-green-500 border-red-500').addClass('border-slate-200 dark:border-slate-700');
+                }
+            });
+            function markValid(field, errorEl) {
+                $(field).addClass('border-green-500 focus:border-green-500').removeClass('border-red-500 border-slate-200 dark:border-slate-700');
+                $(errorEl).addClass('hidden');
+            }
+            function markInvalid(field, errorEl) {
+                $(field).addClass('border-red-500 focus:border-red-500').removeClass('border-green-500 border-slate-200 dark:border-slate-700');
+                $(errorEl).removeClass('hidden');
+            }
+            $('#username').on('blur', function() {
+                if($(this).val().length < 3) markInvalid(this, '#usernameError');
+                else markValid(this, '#usernameError');
+            });
+            $('#email').on('blur', function() {
+                const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if(!regex.test($(this).val())) markInvalid(this, '#emailError');
+                else markValid(this, '#emailError');
+            });
+            $('#phone').on('blur', function() {
+                const regex = /^\d{10}$/;
+                const val = $(this).val().replace(/\D/g,'');
+                if(val.length !== 10) markInvalid(this, '#phoneError');
+                else markValid(this, '#phoneError');
+            });
+            $('#confirmPassword').on('input', function() {
+                if($(this).val() !== $('#password').val()) markInvalid(this, '#confirmError');
+                else markValid(this, '#confirmError');
+            });
+            // Reset Form
+            $('#resetBtn').on('click', function() {
+                $('#registrationForm')[0].reset();
+                $('#personalizedGreeting').text('Hello, Guest');
+                $('input').removeClass('border-green-500 border-red-500').addClass('border-slate-200 dark:border-slate-700');
+                $('[id$="Error"]').addClass('hidden');
+                updateRequirement('length', false, 'At least 7 characters');
+                updateRequirement('capital', false, 'One capital letter');
+                updateRequirement('digit', false, 'One digit (0-9)');
+                updateRequirement('special', false, 'Special character (&, $, #, @)');
+            });
+            // Form Submission
+            $('#registrationForm').on('submit', function(e) {
+                e.preventDefault();
+                const passwordVal = $('#password').val();
+                const isPasswordValid = passwordVal.length >= 7 && /[A-Z]/.test(passwordVal) && /\d/.test(passwordVal) && /[&@#$]/.test(passwordVal);
+                const isFormValid = $('input').toArray().every(input => {
+                    const $input = $(input);
+                    if($input.attr('id') === 'password') return isPasswordValid;
+                    if($input.attr('id') === 'newTipInput') return true;
+                    return $input.val() !== "" && !$input.hasClass('border-red-500');
+                });
+                if(isFormValid) {
+                    alert('Registration Successful!');
+                } else {
+                    alert('Please ensure all requirements are met.');
+                }
+            });
+        });
+    </script>
+
+</body></html>
