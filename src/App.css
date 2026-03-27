@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #0b1120;
+  color: #e2e8f0;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* LEFT PANEL */
+.form-container {
+  width: 32%;
+  padding: 30px;
+  background: #020617;
+  border-right: 1px solid #1e293b;
+  overflow-y: auto;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #020617;
+  color: white;
+}
+
+/* FORM BUTTONS */
+.form-container button {
+  margin-top: 12px;
+  padding: 10px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  border: none;
+}
+
+/* RESUME SIDE */
+.resume-container {
+  width: 68%;
+  padding: 40px;
+  background: #020617;
+}
+
+/* TOOLBAR */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 850px;
+  margin: 0 auto 20px;
+}
+
+.toolbar-left {
+  display: flex;
+  gap: 10px;
+}
+
+.toolbar-right {
+  display: flex;
+  gap: 10px;
+}
+
+.toolbar button {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  background: #1e293b;
+  color: white;
+  border: none;
+}
+
+.toolbar select {
+  padding: 8px;
+  border-radius: 6px;
+  background: #020617;
+  color: white;
+  border: 1px solid #334155;
+}
+
+/* RESUME BOX */
+.resume-box {
+  background: white;
+  color: black;
+  padding: 40px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 800px;
+  box-sizing: border-box;
+  margin: auto;
+}
+
+.resume-box h1 {
+  text-align: center;
+}
+
+.resume-box h3 {
+  margin-top: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.resume-box p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.error {
+  color: red;
+}
+html, body {
+  overflow-x: hidden;
+}
+.form-container {
+  box-sizing: border-box;
+}
+body {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
